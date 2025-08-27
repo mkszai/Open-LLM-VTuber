@@ -173,18 +173,49 @@ class GPTSoVITSConfig(I18nMixin):
     """Configuration for GPT-SoVITS."""
 
     api_url: str = Field(..., alias="api_url")
+    dl_url: str = Field(..., alias="dl_url")
+    version: str = Field(..., alias="version")
+    model_name: str = Field(..., alias="model_name")
+    prompt_text_lang: str = Field(..., alias="prompt_text_lang")
+    emotion: str = Field(..., alias="emotion")
     text_lang: str = Field(..., alias="text_lang")
     ref_audio_path: str = Field(..., alias="ref_audio_path")
     prompt_lang: str = Field(..., alias="prompt_lang")
     prompt_text: str = Field(..., alias="prompt_text")
     text_split_method: str = Field(..., alias="text_split_method")
-    batch_size: str = Field(..., alias="batch_size")
+    batch_size: int = Field(..., alias="batch_size")
+    batch_threshold: float = Field(..., alias="batch_threshold")
+    split_bucket: bool = Field(..., alias="split_bucket")
+    speed_factor: float = Field(..., alias="speed_factor")
+    fragment_interval: float = Field(..., alias="fragment_interval")
     media_type: str = Field(..., alias="media_type")
-    streaming_mode: str = Field(..., alias="streaming_mode")
+    parallel_infer: bool = Field(..., alias="parallel_infer")
+    repetition_penalty: float = Field(..., alias="repetition_penalty")
+    seed: int = Field(..., alias="seed")
+    sample_steps: int = Field(..., alias="sample_steps")
+    if_sr: bool = Field(..., alias="if_sr")
+    top_k: int = Field(..., alias="top_k")
+    top_p: float = Field(..., alias="top_p")
+    temperature: float = Field(..., alias="temperature")
 
     DESCRIPTIONS: ClassVar[Dict[str, Description]] = {
         "api_url": Description(
             en="URL of the GPT-SoVITS API endpoint", zh="GPT-SoVITS API 端点的 URL"
+        ),
+        "dl_url": Description(
+            en="Download URL for the generated audio", zh="生成音频的下载 URL"
+        ),
+        "version": Description(
+            en="API version", zh="API 版本"
+        ),
+        "model_name": Description(
+            en="Name of the GPT-SoVITS model to use", zh="要使用的 GPT-SoVITS 模型名称"
+        ),
+        "prompt_text_lang": Description(
+            en="Language of the prompt text", zh="提示文本的语言"
+        ),
+        "emotion": Description(
+            en="Emotion to use for synthesis", zh="合成时使用的情感"
         ),
         "text_lang": Description(en="Language of the input text", zh="输入文本的语言"),
         "ref_audio_path": Description(
@@ -196,8 +227,19 @@ class GPTSoVITSConfig(I18nMixin):
             en="Method for splitting text", zh="文本分割方法"
         ),
         "batch_size": Description(en="Batch size for processing", zh="处理批次大小"),
+        "batch_threshold": Description(en="Batch threshold", zh="批次阈值"),
+        "split_bucket": Description(en="Enable split bucket", zh="启用分割桶"),
+        "speed_factor": Description(en="Speed factor", zh="速度因子"),
+        "fragment_interval": Description(en="Fragment interval", zh="片段间隔"),
         "media_type": Description(en="Output media type", zh="输出媒体类型"),
-        "streaming_mode": Description(en="Enable streaming mode", zh="启用流式模式"),
+        "parallel_infer": Description(en="Enable parallel inference", zh="启用并行推理"),
+        "repetition_penalty": Description(en="Repetition penalty", zh="重复惩罚"),
+        "seed": Description(en="Random seed", zh="随机种子"),
+        "sample_steps": Description(en="Sample steps", zh="采样步数"),
+        "if_sr": Description(en="Enable super resolution", zh="启用超分辨率"),
+        "top_k": Description(en="Top-K sampling", zh="Top-K 采样"),
+        "top_p": Description(en="Top-P sampling", zh="Top-P 采样"),
+        "temperature": Description(en="Temperature parameter", zh="温度参数"),
     }
 
 

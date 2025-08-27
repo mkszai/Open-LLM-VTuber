@@ -340,15 +340,31 @@ character_config:
 
     gpt_sovits_tts:
       # 将参考音频放到 GPT-Sovits 的根路径，或在此处设置路径
-      api_url: 'http://127.0.0.1:9880/tts' # API URL
-      text_lang: 'zh' # 文本语言
+      api_url: 'http://127.0.0.1:8000' # API URL
+      dl_url: 'http://127.0.0.1:8000' # 下载 URL
+      version: 'v4' # API 版本
+      model_name: '原神-中文-八重神子_ZH' # 模型名称
+      prompt_text_lang: '中文' # 提示文本语言
+      emotion: '默认' # 情感
+      text_lang: '中文' # 文本语言
       ref_audio_path: '' # str.(必需) 参考音频的路径
-      prompt_lang: 'zh' # str.(必需) 参考音频提示文本的语言
+      prompt_lang: '中文' # str.(必需) 参考音频提示文本的语言
       prompt_text: '' # str.(可选) 参考音频的提示文本
-      text_split_method: 'cut5' # 文本分割方法
-      batch_size: '1' # 批处理大小
+      text_split_method: '按标点符号切' # 文本分割方法
+      batch_size: 10 # 批处理大小
+      batch_threshold: 0.75 # 批处理阈值
+      split_bucket: true # 分割桶
+      speed_factor: 1.0 # 速度因子
+      fragment_interval: 0.3 # 片段间隔
       media_type: 'wav' # 媒体类型
-      streaming_mode: 'false' # 流模式
+      parallel_infer: true # 并行推理
+      repetition_penalty: 1.35 # 重复惩罚
+      seed: -1 # 随机种子
+      sample_steps: 16 # 采样步数
+      if_sr: false # 是否超分辨率
+      top_k: 10 # Top-K 采样
+      top_p: 1.0 # Top-P 采样
+      temperature: 1.0 # 温度参数
 
     fish_api_tts:
       # Fish TTS API 的 API 密钥。

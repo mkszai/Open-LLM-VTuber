@@ -79,14 +79,30 @@ class TTSFactory:
 
             return GSVEngine(
                 api_url=kwargs.get("api_url"),
+                dl_url=kwargs.get("dl_url"),
+                version=kwargs.get("version"),
+                model_name=kwargs.get("model_name"),
+                prompt_text_lang=kwargs.get("prompt_text_lang"),
+                emotion=kwargs.get("emotion"),
                 text_lang=kwargs.get("text_lang"),
                 ref_audio_path=kwargs.get("ref_audio_path"),
                 prompt_lang=kwargs.get("prompt_lang"),
                 prompt_text=kwargs.get("prompt_text"),
                 text_split_method=kwargs.get("text_split_method"),
                 batch_size=kwargs.get("batch_size"),
+                batch_threshold=kwargs.get("batch_threshold"),
+                split_bucket=kwargs.get("split_bucket"),
+                speed_factor=kwargs.get("speed_factor"),
+                fragment_interval=kwargs.get("fragment_interval"),
                 media_type=kwargs.get("media_type"),
-                streaming_mode=kwargs.get("streaming_mode"),
+                parallel_infer=kwargs.get("parallel_infer"),
+                repetition_penalty=kwargs.get("repetition_penalty"),
+                seed=kwargs.get("seed"),
+                sample_steps=kwargs.get("sample_steps"),
+                if_sr=kwargs.get("if_sr"),
+                top_k=kwargs.get("top_k"),
+                top_p=kwargs.get("top_p"),
+                temperature=kwargs.get("temperature"),
             )
         elif engine_type == "siliconflow_tts":
             from .siliconflow_tts import SiliconFlowTTS

@@ -332,15 +332,31 @@ character_config:
 
     gpt_sovits_tts:
       # put ref audio to root path of GPT-Sovits, or set the path here
-      api_url: 'http://127.0.0.1:9880/tts'
-      text_lang: 'zh'
+      api_url: 'http://127.0.0.1:8000'
+      dl_url: 'http://127.0.0.1:8000'
+      version: 'v4'
+      model_name: '原神-中文-八重神子_ZH'
+      prompt_text_lang: '中文'
+      emotion: '默认'
+      text_lang: '中文'
       ref_audio_path: ''
-      prompt_lang: 'zh'
+      prompt_lang: '中文'
       prompt_text: ''
-      text_split_method: 'cut5'
-      batch_size: '1'
+      text_split_method: '按标点符号切'
+      batch_size: 10
+      batch_threshold: 0.75
+      split_bucket: true
+      speed_factor: 1.0
+      fragment_interval: 0.3
       media_type: 'wav'
-      streaming_mode: 'false'
+      parallel_infer: true
+      repetition_penalty: 1.35
+      seed: -1
+      sample_steps: 16
+      if_sr: false
+      top_k: 10
+      top_p: 1.0
+      temperature: 1.0
 
     fish_api_tts:
       # The API key for the Fish TTS API.

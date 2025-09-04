@@ -28,6 +28,27 @@
         }
     },
     {
+        "name": "kelit",
+        "description": "",
+        "url": "/live2d-models/kelit/kelit.model3.json",
+        "kScale": 0.5,
+        "initialXshift": 0,
+        "initialYshift": 0,
+        "kXOffset": 1150,
+        "idleMotionGroupName": "Idle",
+        "defaultEmotion" : 3,
+        "emotionMap": {
+            "neutral": 0,
+            "anger": 2,
+            "disgust": 2,
+            "fear": 1,
+            "joy": 3,
+            "smirk": 3,
+            "sadness": 1,
+            "surprise": 3
+        }
+    },
+    {
         "name": "shenzi",
         "description": "",
         "url": "/live2d-models/BCSZ1.1/BCSZ1.1.model3.json",
@@ -36,6 +57,7 @@
         "initialYshift": 0,
         "kXOffset": 1150,
         "idleMotionGroupName": "Idle",
+        "defaultEmotion" : 3,
         "emotionMap": {
             "neutral": 0,
             "anger": 2,
@@ -47,11 +69,32 @@
             "surprise": 3
         },
         "tapMotions": {
-            "HitAreaHead": {
-                "": 1
+            "ArtMesh5": {
+                "Tap无聊": 1
             },
-            "HitAreaBody": {
-                "": 1
+            "ArtMesh6": {
+                "Tap头饰": 1
+            },
+            "ArtMesh7": {
+                "Tap归零": 1
+            },
+            "ArtMesh8": {
+                "Tap尾巴": 1
+            },
+            "ArtMesh9": {
+                "Tap不变": 1
+            },
+            "ArtMesh10": {
+                "Tap中午好": 1
+            },
+            "ArtMesh11": {
+                "Tap晚上好": 1
+            },
+            "ArtMesh12": {
+                "Tap初见": 1
+            },
+            "ArtMesh13": {
+                "Tap屑眼神": 1
             }
         }
     },
